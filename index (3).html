@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Baixar Jogo da Forca</title>
+    <meta
+      name="description"
+      content="Baixe o aplicativo Jogo da Forca para Android."
+    />
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: #f3f3f3;
+        color: #222;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .download-page {
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        padding: 24px;
+      }
+
+      .download-card {
+        width: min(100%, 420px);
+        padding: 36px 28px;
+        text-align: center;
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        box-shadow: 0 4px 16px rgb(0 0 0 / 8%);
+      }
+
+      .download-card h1 {
+        margin: 0;
+        font-size: 28px;
+      }
+
+      .download-card p {
+        margin: 12px 0 24px;
+        color: #666;
+        font-size: 16px;
+      }
+
+      .download-button {
+        display: inline-block;
+        padding: 12px 22px;
+        color: #fff;
+        background: #1976d2;
+        border-radius: 6px;
+        font-size: 16px;
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      .download-button:hover {
+        background: #125ca3;
+      }
+
+      .download-button:focus-visible {
+        outline: 3px solid #90caf9;
+        outline-offset: 3px;
+      }
+
+      #download-status {
+        min-height: 20px;
+        margin: 16px 0 0;
+        color: #555;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="download-page">
+      <section class="download-card">
+        <h1>Jogo da Forca</h1>
+        <p>Baixe o aplicativo para Android.</p>
+
+        <a
+          id="download-button"
+          class="download-button"
+          href="./jogo-da-forca.apk"
+          download="jogo-da-forca.apk"
+        >
+          Baixar APK
+        </a>
+
+        <p id="download-status" aria-live="polite"></p>
+      </section>
+    </main>
+
+    <script>
+      const downloadButton = document.querySelector("#download-button");
+      const downloadStatus = document.querySelector("#download-status");
+
+      downloadButton.addEventListener("click", () => {
+        downloadStatus.textContent = "Download iniciado.";
+      });
+    </script>
+  </body>
+</html>
